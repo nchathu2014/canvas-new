@@ -20,7 +20,7 @@ export default class ViewTitle extends React.Component{
                             <div className="col-lg-6 dash-horizontal" style={{wordWrap: 'break-word'}}>
                                 <b>Title</b>:
                             </div>
-                            <div className="col-lg-2 dash-horizontal">
+                            <div className="col-lg-2 text-center dash-horizontal">
                                 15 Points
                             </div>
                             <div className="col-lg-4">

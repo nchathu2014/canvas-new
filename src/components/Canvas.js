@@ -1,4 +1,5 @@
 import React from 'react';
+import ReactDOM from 'react-dom';
 import Header from './Header';
 import View from './View';
 import MenuWrapper from './MenuWrapper';
@@ -6,20 +7,21 @@ import Menu from './Menu';
 import MenuItem from './MenuItem';
 import MenuLabel from './MenuLabel';
 
+/*2nd level components*/
+import AddMedia from './other_components/AddMedia';
+import AddQuestion from './other_components/AddQuestion';
+import GradingOptions from './other_components/GradingOptions';
+
 
 export default class Canvas extends React.Component{
 
 	
 
 	constructor(props){
-		super(props);	
-	    
+		super(props);	    
 	}
 
-	render(){
-
-		
-		
+	render(){	
 		return(
 
 			<div className="container-fluid" style={{marginLeft:'-12px',marginRight:'-12px'}}>
@@ -34,19 +36,19 @@ export default class Canvas extends React.Component{
 						<MenuWrapper>
 							<Menu>
 								<MenuLabel title="QUIZ/POLL DETAIL"/>
-								<MenuItem name="Title*" menuItemOnClick={this._menuItemOnClick.bind(this)}/>
-								<MenuItem name="Due Date*" menuItemOnClick={this._menuItemOnClick.bind(this)}/>
-								<MenuItem name="Learning Objectives" menuItemOnClick={this._menuItemOnClick.bind(this)}/>
-								<MenuItem name="Description" menuItemOnClick={this._menuItemOnClick.bind(this)}/>
+								<MenuItem name="Title*" menuItemOnClick={this._menuItemOnClick.bind(this,1)}/>
+								<MenuItem name="Due Date*" menuItemOnClick={this._menuItemOnClick.bind(this,2)}/>
+								<MenuItem name="Learning Objectives" menuItemOnClick={this._menuItemOnClick.bind(this,3)}/>
+								<MenuItem name="Description" menuItemOnClick={this._menuItemOnClick.bind(this,4)}/>
 							</Menu>
 							<Menu>
 								<MenuLabel title="QUIZ/POLL ACTIVITY"/>
-								<MenuItem name="Add Media" menuItemOnClick={this._menuItemOnClick.bind(this)}/>
-								<MenuItem name="Add Question" menuItemOnClick={this._menuItemOnClick.bind(this)}/>
+								<MenuItem name="Add Media" menuItemOnClick={this._menuItemOnClick.bind(this,5)}/>
+								<MenuItem name="Add Question" menuItemOnClick={this._menuItemOnClick.bind(this,6)}/>
 							</Menu>
 							<Menu>
 								<MenuLabel title="SETTINGS"/>
-								<MenuItem name="Grading Options" menuItemOnClick={this._menuItemOnClick.bind(this)}/>
+								<MenuItem name="Grading Options" menuItemOnClick={this._menuItemOnClick.bind(this,7)}/>
 							</Menu>
 							
 						</MenuWrapper>
@@ -60,8 +62,10 @@ export default class Canvas extends React.Component{
 					</div>
 				</div>
 				{/*popup modal*/}
-                <div className="popUpModal">
+                <div className="popUpModal" id="popUpModal">
                     <button type="button" className="close pull-left"  onClick={this._popUpClose} data-dismiss="modal" aria-hidden="true">×</button>
+                	<br/>
+                	<div id="popupContainer">&nbsp;</div>
                 </div>
 			</div>
 		);
@@ -72,7 +76,7 @@ export default class Canvas extends React.Component{
         $(".popUpModal").show().hide("slide", {direction: "right" }, 300 );//slide animated to popup dialog
 	}
 
-	_menuItemOnClick(){
+	_menuItemOnClick(menuItem){
 		$('.rightDiv').removeClass('expandRightDiv');//make the rightSide div to initial width
         $('.viewIcon').removeClass('rotate180Deg');//reset icon into initial state (0 deg)
         $(".popUpModal").css("width",$('.menu-btn').width()+10+'px'); //make the popup window width relative to menu item width
@@ -82,6 +86,21 @@ export default class Canvas extends React.Component{
 
         if(!$(".popUpModal").is(':visible')){  
  			$(".popUpModal").hide().show("slide", {direction: "right" }, 300 );//slide animated to popup dialog
+        }
+
+        
+        if(menuItem==5){
+        	console.log(menuItem)
+        	ReactDOM.render(<AddMedia/>, 
+        		document.getElementById('popupContainer'));       	
+        }
+        if(menuItem==6){
+        	ReactDOM.render(<AddQuestion/>, 
+        		document.getElementById('popupContainer'));
+        }
+        if(menuItem==7){
+        	ReactDOM.render(<GradingOptions/>, 
+        		document.getElementById('popupContainer'));
         }
 	}
 

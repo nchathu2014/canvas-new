@@ -10,10 +10,10 @@ export default class Header extends React.Component{
 		return(
 			<div className="row">
 				<div className="col-lg-3">
-					<h3>&nbsp;&nbsp;&nbsp;&nbsp;Build a Quiz/Poll</h3>
+					<h3>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Build a Quiz/Poll</h3>
 				</div>
 				<div className="col-lg-9">
-					<span className="pull-right" style={{paddingTop:10,paddingRight:30}}>
+					<span className="pull-right" style={{paddingTop:10,paddingRight:50}}>
 						<button className="btn btn-primary" onClick={this._saveExitHandle.bind(this)}>Save and Exit</button>&nbsp;
 						<button className="btn btn-default" onClick={this._publishHandle.bind(this)}>Publish</button>
 					</span>
