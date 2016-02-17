@@ -9,7 +9,17 @@ export default class AddQuestion extends React.Component{
 	render(){
 		return(
 			<div>
-				<h1>Add Question Component</h1>
+				<div className="text-center">
+					<h4>Add Questions&nbsp;<span className="glyphicon glyphicon-exclamation-sign"></span></h4>
+				</div>
+				<div>
+					<p>
+						First,play video and pause where you want to insert your question
+					</p>
+				</div>
+				<div>
+					<button className="btn btn-sm btn-primary pull-left">Add question</button>
+				</div>
 			</div>
 		);
 	}

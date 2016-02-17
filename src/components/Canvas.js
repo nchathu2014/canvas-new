@@ -12,7 +12,9 @@ import AddMedia from './other_components/AddMedia';
 import AddQuestion from './other_components/AddQuestion';
 import GradingOptions from './other_components/GradingOptions';
 import Description from './other_components/Description';
-import AssignmentDetails from './other_components/AssignmentDetails';
+import QuizDetail from './other_components/QuizDetail';
+import LearningObjectives from './other_components/LearningObjectives';
+
 
 
 export default class Canvas extends React.Component{
@@ -88,23 +90,36 @@ export default class Canvas extends React.Component{
  			$(".popUpModal").hide().show("slide", {direction: "right" }, 300 );//slide animated to popup dialog
         }
 
-        if(menuItem==4){
-        	console.log(menuItem)
-        	ReactDOM.render(<Description/>, 
-        		document.getElementById('popupContainer'));       	
-        }
-        if(menuItem==5){
-        	console.log(menuItem)
-        	ReactDOM.render(<AddMedia/>, 
-        		document.getElementById('popupContainer'));       	
-        }
-        if(menuItem==6){
-        	ReactDOM.render(<AddQuestion/>, 
-        		document.getElementById('popupContainer'));
-        }
-        if(menuItem==7){
-        	ReactDOM.render(<GradingOptions/>, 
-        		document.getElementById('popupContainer'));
+
+        switch(menuItem){
+        	case 1 : ReactDOM.render(<QuizDetail/>, 
+        			 document.getElementById('popupContainer'));
+        			 break;
+
+        	case 2 : ReactDOM.render(<QuizDetail/>, 
+        			 document.getElementById('popupContainer'));
+        			 break;
+
+        	case 3 : ReactDOM.render(<LearningObjectives/>, 
+        			 document.getElementById('popupContainer'));
+        			 break;
+        			 
+        	case 4 : ReactDOM.render(<Description/>, 
+        			 document.getElementById('popupContainer'));
+        			 break;
+
+        	case 5 : ReactDOM.render(<AddMedia/>, 
+        			 document.getElementById('popupContainer'));
+        			 break;
+
+        	case 6 : ReactDOM.render(<AddQuestion/>, 
+        			 document.getElementById('popupContainer'));
+        			 break;
+        			 
+        	case 7 : ReactDOM.render(<GradingOptions/>, 
+        			 document.getElementById('popupContainer'));
+        			 break;
+
         }
 	}
 
