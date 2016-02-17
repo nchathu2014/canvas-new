@@ -1,6 +1,6 @@
 import React from 'react';
 
-export default class App extends React.Component{
+export default class AssignmentDetails extends React.Component{
 
 	constructor(props){
 		super(props);		 
@@ -9,7 +9,7 @@ export default class App extends React.Component{
 	render(){
 		return(
 			<div>
-				<h1>Nuwan with ReactJS : Starter Kit</h1>
+				<h1>AssignmentDetails</h1>
 			</div>
 		);
 	}

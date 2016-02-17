@@ -11,11 +11,11 @@ import MenuLabel from './MenuLabel';
 import AddMedia from './other_components/AddMedia';
 import AddQuestion from './other_components/AddQuestion';
 import GradingOptions from './other_components/GradingOptions';
+import Description from './other_components/Description';
+import AssignmentDetails from './other_components/AssignmentDetails';
 
 
 export default class Canvas extends React.Component{
-
-	
 
 	constructor(props){
 		super(props);	    
@@ -24,7 +24,7 @@ export default class Canvas extends React.Component{
 	render(){	
 		return(
 
-			<div className="container-fluid" style={{marginLeft:'-12px',marginRight:'-12px'}}>
+			<div className="container-fluid" style={{marginLeft:'-12px',marginRight:'-12px',overflow:'hidden'}}>
 			<link rel="stylesheet" type="text/css" href="css/canvas-style-default.css"/>
 				<div className="row">
 					<div className="col-lg-12">
@@ -88,7 +88,11 @@ export default class Canvas extends React.Component{
  			$(".popUpModal").hide().show("slide", {direction: "right" }, 300 );//slide animated to popup dialog
         }
 
-        
+        if(menuItem==4){
+        	console.log(menuItem)
+        	ReactDOM.render(<Description/>, 
+        		document.getElementById('popupContainer'));       	
+        }
         if(menuItem==5){
         	console.log(menuItem)
         	ReactDOM.render(<AddMedia/>, 

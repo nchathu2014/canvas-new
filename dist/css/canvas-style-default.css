@@ -74,3 +74,13 @@ html,body{
 }
 
 
+/*Override the Boilerplate styles to pearson standards colors*/
+.btn-primary{
+    background-color: #107ACA
+}
+
+.btn-primary:hover{
+    background-color:#0E6AB0;
+}
+
+

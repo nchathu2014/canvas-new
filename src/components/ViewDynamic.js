@@ -12,8 +12,8 @@ export default class ViewDynamic extends React.Component{
 				Dynamic View Component
 				<br/>
 				<br/>
-				<br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/>
-				<br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/>
+				<br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/>
+				
 				
 			</div>
 		);
