@@ -68,7 +68,7 @@ html,body{
     position: absolute;
     top:56px;
     left: 45px;
-    padding: 20px;
+    padding: 15px;
     z-index: 99997;
     display: none;
 
@@ -98,6 +98,10 @@ html,body{
 
 .fontNormal{
     font-weight:normal;
+}
+
+.dropdown-toggle{
+    background-color: white
 }
 
 

@@ -8,9 +8,7 @@ export default class QuizDetail extends React.Component{
 
 	render(){
 
-		var style={
-			width:'90%'
-		};
+		
 
 		
 
@@ -29,14 +27,36 @@ export default class QuizDetail extends React.Component{
 				  <label forHtml="qpDueDate" className="fontNormal">
 				  	Due date<span className="star">*</span>
 				  </label>
-				  <input type="password" className="form-control" id="qpDueDate" style={style}/>
-				  <span className="glyphicon glyphicon-calendar" style={{position:'relative',top:-25,left:'82%'}}>&nbsp;</span>
-				</div>
+
+
+				<div className="row">
+        			<div className='col-lg-10'>
+        			<div className="form-group">
+        				<div className='input-group date' id='datetimepicker1' onClick={this._openDatepicker.bind(this)}>
+		                <input type='text' className="form-control" style={{borderRight:'none'}}/>
+		                <span className="input-group-addon" style={{backgroundColor:'white'}}>
+		                	<span className="glyphicon glyphicon-calendar">
+		                	</span>
+		            	</span>
+		        	</div>
+		        	</div>
+        		</div>
+        		</div>
+			</div>
 				<div>
 					<button className="btn btn-primary pull-right">Save</button>
 				</div>
 			</div>
 		);
+	}
+
+	_openDatepicker(){
+
+		 
+                $('#datetimepicker1').datetimepicker();
+
+          
+        
 	}
 }
 
