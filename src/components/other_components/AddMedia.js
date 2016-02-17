@@ -9,7 +9,8 @@ export default class AddMedia extends React.Component{
 	render(){
 		return(
 			<div>
-				<h1>Add Media Component</h1>
+				<h3>Add Media Component</h3>
+				(Dependency with Dahara)
 			</div>
 		);
 	}

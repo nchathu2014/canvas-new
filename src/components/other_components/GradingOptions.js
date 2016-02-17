@@ -9,7 +9,7 @@ export default class GradingOptions extends React.Component{
 	render(){
 		return(
 			<div>
-				<h1>Grading Options Component</h1>
+				<h4>Grading Options Component</h4>
 			</div>
 		);
 	}

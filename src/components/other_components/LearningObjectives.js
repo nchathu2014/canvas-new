@@ -12,7 +12,8 @@ export default class LearningObjectives extends React.Component{
 			position:'relative',
 			borderTop:'1px #cccccc dotted',
 			top:-35,
-			left:1
+			right:1,
+			width:'100%'
 		}
 
 		return(
@@ -23,22 +24,28 @@ export default class LearningObjectives extends React.Component{
 				<div>
 					<textarea  rows="10" className="form-control" style={{resize:'none'}}></textarea>
 					
-					<div className="btn-group" style={btnDrop}>
-					 <button  type="button" className="btn btn-sm dropdown-toggle" 
-					 	data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-					    Add Learning Objective <span className="glyphicon glyphicon-menu-down"></span>
-					  </button>
-					  <ul className="dropdown-menu">
-					    <li><a href="#">Action</a></li>
-					    <li><a href="#">Another action</a></li>
-					    <li><a href="#">Something else here</a></li>
-					    <li role="separator" className="divider"></li>
-					    <li><a href="#">Separated link</a></li>
-					  </ul>
-					</div>  
+					 <div className="row">
+					 	<div className="col-lg-12">
+					 		<div className="btn-group" style={btnDrop}>
+					 		<button  type="button" className="btn btn-sm dropdown-toggle pull-right" 
+					 				data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+					    			Add learning objective <span className="glyphicon glyphicon-menu-down"></span>
+					  		</button>
+							  <ul className="dropdown-menu pull-right" style={{fontSize:11,width:'100%'}}>
+							    <li><a href="#">Obj1</a></li>
+							    <li role="separator" className="divider"></li>
+							    <li><a href="#">Obj2</a></li>
+							    <li role="separator" className="divider"></li>
+							    <li><a href="#">Obj3</a></li>
+							    <li role="separator" className="divider"></li>
+							    <li><a href="#">Obj4</a></li>
+							  </ul>
+					</div> 
+					 	</div>
+					 </div>
 
 				</div>
-				<div>&nbsp;</div>
+				
 				<div>
 					<button className="btn btn-primary pull-right">Save</button>
 				</div>
