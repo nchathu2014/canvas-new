@@ -38,19 +38,31 @@ export default class Canvas extends React.Component{
 						<MenuWrapper>
 							<Menu>
 								<MenuLabel title="QUIZ/POLL DETAIL"/>
-								<MenuItem name="Title*" menuItemOnClick={this._menuItemOnClick.bind(this,1)}/>
-								<MenuItem name="Due Date*" menuItemOnClick={this._menuItemOnClick.bind(this,2)}/>
-								<MenuItem name="Learning Objectives" menuItemOnClick={this._menuItemOnClick.bind(this,3)}/>
-								<MenuItem name="Description" menuItemOnClick={this._menuItemOnClick.bind(this,4)}/>
+								<MenuItem menuItemOnClick={this._menuItemOnClick.bind(this,1)}>
+									Title and Due Date
+									<span className="star">*</span>
+								</MenuItem>
+								<MenuItem menuItemOnClick={this._menuItemOnClick.bind(this,2)}>
+									Learning Objectives
+								</MenuItem>
+								<MenuItem menuItemOnClick={this._menuItemOnClick.bind(this,3)}>
+									Description
+								</MenuItem>
 							</Menu>
 							<Menu>
 								<MenuLabel title="QUIZ/POLL ACTIVITY"/>
-								<MenuItem name="Add Media" menuItemOnClick={this._menuItemOnClick.bind(this,5)}/>
-								<MenuItem name="Add Question" menuItemOnClick={this._menuItemOnClick.bind(this,6)}/>
+								<MenuItem  menuItemOnClick={this._menuItemOnClick.bind(this,4)}>
+									Add Media
+								</MenuItem>
+								<MenuItem menuItemOnClick={this._menuItemOnClick.bind(this,5)}>
+									Add Question
+								</MenuItem>
 							</Menu>
 							<Menu>
 								<MenuLabel title="SETTINGS"/>
-								<MenuItem name="Grading Options" menuItemOnClick={this._menuItemOnClick.bind(this,7)}/>
+								<MenuItem  menuItemOnClick={this._menuItemOnClick.bind(this,6)}>
+									Grading Options
+								</MenuItem>
 							</Menu>
 							
 						</MenuWrapper>
@@ -96,27 +108,23 @@ export default class Canvas extends React.Component{
         			 document.getElementById('popupContainer'));
         			 break;
 
-        	case 2 : ReactDOM.render(<QuizDetail/>, 
-        			 document.getElementById('popupContainer'));
-        			 break;
-
-        	case 3 : ReactDOM.render(<LearningObjectives/>, 
+        	case 2 : ReactDOM.render(<LearningObjectives/>, 
         			 document.getElementById('popupContainer'));
         			 break;
         			 
-        	case 4 : ReactDOM.render(<Description/>, 
+        	case 3 : ReactDOM.render(<Description/>, 
         			 document.getElementById('popupContainer'));
         			 break;
 
-        	case 5 : ReactDOM.render(<AddMedia/>, 
+        	case 4 : ReactDOM.render(<AddMedia/>, 
         			 document.getElementById('popupContainer'));
         			 break;
 
-        	case 6 : ReactDOM.render(<AddQuestion/>, 
+        	case 5 : ReactDOM.render(<AddQuestion/>, 
         			 document.getElementById('popupContainer'));
         			 break;
         			 
-        	case 7 : ReactDOM.render(<GradingOptions/>, 
+        	case 6 : ReactDOM.render(<GradingOptions/>, 
         			 document.getElementById('popupContainer'));
         			 break;
 
